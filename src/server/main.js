@@ -1,4 +1,4 @@
-import App from './App';
+import App from '../App/App';
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import express from 'express';
@@ -20,7 +20,7 @@ const jsScriptTagsFromAssets = (assets, entrypoint, ...extra) => {
   ).join('') : '' : '';
 };
 
-export const renderApp = (req, res) => {
+export const renderApp = (req, _res) => {
   const context = {};
   const markup = renderToString(
     <StaticRouter context={context} location={req.url}>
